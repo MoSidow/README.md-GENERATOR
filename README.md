@@ -3,17 +3,17 @@
   ## Description
   
   ## Table OF Contents
-  * [ Installation. ](#install)
-  * [ Usage. ](#Usg)
-  * [ Licence. ](#Lic)
-  * [ Contributing. ](#Con)
-  * [ Tests. ](#Ts)
-  * [ Questions. ](#Que)
+  * [ Installation ](#install)
+  * [ Usage ](#Usg)
+  * [ Licence ](#Lic)
+  * [ Contributing ](#Con)
+  * [ Tests ](#Ts)
+  * [ Questions ](#Que)
   
 <a name="install"></a>
 ## Installation
 In order for this Program to run,  is required to be installed.
-<a name="#Usg"></a>
+<a name="Usg"></a>
 ## Usage
 Using this Program requires you to: .
 <a name="Lic"></a>
