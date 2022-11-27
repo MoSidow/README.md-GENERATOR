@@ -8,7 +8,7 @@ const generateReadme = ({ Title, Description, Installation, Usage, Licence, Lice
   ## Description
   ${Description}
   ## Table OF Contents
-  * [Installation](##Intro)
+  * [Installation](#Intro)
   * [Usage](##Usage)
   * [Licence](##Licence)
   * [Contributers](##Contributers)
