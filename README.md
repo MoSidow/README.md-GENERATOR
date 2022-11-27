@@ -3,12 +3,12 @@
   ## Description
   
   ## Table OF Contents
-  1. [ Installation. ](#install)
-  2. [ Usage. ](#Usg)
-  3. [ Licence. ](#Lic)
-  4. [ Contributing. ](#Con)
-  5. [ Tests. ](#Ts)
-  6. [ Questions. ](#Que)
+  * [ Installation. ](#install)
+  * [ Usage. ](#Usg)
+  * [ Licence. ](#Lic)
+  * [ Contributing. ](#Con)
+  * [ Tests. ](#Ts)
+  * [ Questions. ](#Que)
   
 <a name="install"></a>
 ## Installation
