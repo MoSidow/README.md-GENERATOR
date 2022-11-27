@@ -1,7 +1,33 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+const generateReadme = ({ Title, Description, Installation, Usage, Licence, LicenceBadge, Contributing, Tests, GithubUsername, EmailAddress  }) =>
 
+  ` ${LicenceBadge}
+  # ${Title}
+  ## Description
+  ${Description}
+  ## Table OF Contents
+  * [Installation](##Installation)
+  * [Usage](##Usage)
+  * [Licence](##Licence)
+  * [Contributers](##Contributers)
+  * [Tests](##Tests)
+  * [Questions](##Questions)
+## Installation
+In order for this Program to run, ${Installation} is required to be installed.
+## Usage
+Using this Program requires you to: ${Usage}.
+## Licence
+The Project you are currently viewing is licenced under the ${Licence} licence.
+## Contributers
+This Project was contributed by the following Person/People: ${Contributing}
+## Tests
+Testing of this Program can simply br done by: ${Tests}.
+## Questions
+To view my Github profile visit the link: https://github.com/${GithubUsername}
+or contact me by email at ${EmailAddress}
+`;
 
 inquirer
   .prompt([
@@ -18,7 +44,7 @@ inquirer
     {
       type: 'input',
       name: 'Installation',
-      message: 'What installations are required to run this file?',
+      message: 'What installations are required to run this Program?',
     },
     {
       type: 'input',
@@ -26,9 +52,21 @@ inquirer
       message: 'How will this program be used?',
     },
     {
-      type: 'input',
-      name: 'Licence',
-      message: 'What type of licence does this program use?',
+        type: 'list',
+        name: 'Licence',
+        message: 'What type of licence does this program use? Select One...',
+        choices: 
+        ["MIT", "ISC", "MPL 2.0","Unlicense"]
+      },
+    {
+      type: 'list',
+      name: 'LicenceBadge',
+      message: 'Please select the correct licence Badge for your chosen licence.',
+      choices: 
+      ["[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
+       "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)",
+        "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)",
+         "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)"]
     },
     {
       type: 'input',
@@ -42,13 +80,19 @@ inquirer
       },
       {
         type: 'input',
-        name: 'Github-Username',
+        name: 'GithubUsername',
         message: 'What is your Github username?',
       },
       {
         type: 'input',
-        name: 'Email-Address',
+        name: 'EmailAddress',
         message: 'What is your Email Address?',
       },
   ])
+  .then((answers) => {
+    const readmePageContent = generateReadme(answers);
 
+    fs.writeFile('README.md', readmePageContent, (err) =>
+      err ? console.log(err) : console.log('Successfully created README.md!')
+    );
+  });
