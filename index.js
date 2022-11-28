@@ -1,6 +1,8 @@
+// const for inquirer and fs
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+// Template for Readme file
 const generateReadme = ({ Title, Description, Installation, Usage, Licence, LicenceBadge, Contributing, Tests, GithubUsername, EmailAddress  }) =>
 
   ` ${LicenceBadge}
@@ -36,6 +38,8 @@ To view my Github profile visit the link: https://github.com/${GithubUsername}
 or contact me by email at ${EmailAddress}
 `;
 
+
+// An array of questions for the user
 inquirer
   .prompt([
     {
@@ -95,6 +99,8 @@ inquirer
         name: 'EmailAddress',
         message: 'What is your Email Address?',
       },
+
+  // function to write readme file and render it
   ])
   .then((answers) => {
     const readmePageContent = generateReadme(answers);
